@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 
     'todos.apps.TodosConfig',
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
 
 REST_FRAEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permission.AllowAny',
+        'rest_framework.permission.TokenAuthentication',
+        'rest_framework.permission.SessionAuthentication',
     ]
 }
 
